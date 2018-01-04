@@ -1,0 +1,257 @@
+/* CSS Document */
+body{
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	text-align:center;
+	background-color:#000;
+	color:white;
+}
+header{
+	background-color:#000;	
+}
+footer{
+	margin-top:50px;
+	border-top: medium;
+	border-color: white;
+	position:relative;
+	bottom:0;
+}
+footer .socialBtn img{
+	display:inline-block;
+	max-height:20px;
+	max-width:20px;	
+}
+#mainLogo{
+	display:inline;
+	float:left;	
+}
+#menuBar{
+	width:500px;
+	height:25px;
+	border-radius:5px;
+	display:inline;
+	text-align:right;
+	font-size:24px;
+}
+#menuBar li{
+	display:inline;
+	margin:10px;
+	text-align:center;
+}
+#menuBar a{
+	text-decoration:none;
+	color:white;
+}
+a:link{
+	color:black;
+}
+a:visited{
+	color:black;
+}
+a:hover{
+	color:red;
+}
+a:active{
+	color:red;
+}
+.heading{
+	background-color:white;
+}
+.slider{
+	border-color:#FFF;
+	border-top:thin;
+	border-bottom:thin;	
+}
+.slider img{
+	width:100%;
+	height:auto;	
+}
+
+/* Home Page CSS */
+.HomeMusicBtn a{
+	position:relative;
+	text-align:center;
+	color:white;
+	height:180px;
+	width:auto;
+	background-color:black;
+	display:inline-block;
+	border:thin;
+	border-color:#000;
+	border-radius:20px;
+	margin-left:20px;
+	margin-right:20px;
+	margin-top:10px;
+	margin-bottom:10px;
+	font-size:18px;
+}
+.HomeMusicBtn a img{
+	margin-top:20px;
+	height:150px;
+	width:150px;
+}
+#HomepageMusic{
+	background-color:white;	
+}
+#HomepageMusic h1{
+	font-size:56px;
+	color:black;
+}
+#HomepageMusic h2{
+	font-size:24px;
+	color:black;
+}
+#AboutUs{
+	background-color:black;
+	color:white;	
+}
+#AboutUs h1{
+	font-size:56px;	
+}
+#AboutUs h2{
+	font-size:24px;	
+}
+#AboutUs img{
+	max-width:80%;
+	max-height:80%;	
+}
+
+/* News Page CSS */
+.NewsNav{
+	margin-top:50px;
+	display:inline-block;
+	text-align:left;
+}
+.NewsNav ul{
+	list-style-type:none;
+	column-span:1;	
+}
+.column{
+	float:left;
+	width:50%;	
+}
+.NewsNav:after{
+	content:"";
+	display:table;
+	clear:both;	
+}
+.column p{
+	display:hidden;
+}
+
+/* Album Design CSS */
+.Customiser{
+	margin-top:100px;	
+}
+.Customiser h1{
+	font-size:3em;
+}
+#AlbumDrawing{
+	width:800px;
+	height:0;
+	padding-top:800px;
+	border:1px solid white;	
+}
+.CustomiserInput{
+	display:inline;	
+}
+
+/* Gigs CSS */
+#gigs ul{
+	list-style-type:none;	
+}
+#gigs ul li{
+	border-top:1px solid white;
+	border-bottom:1px solid white;
+}
+#gigsColumn1{
+	float:left;
+	width:20%;	
+}
+#gigsColumn2{
+	float:left;
+	width:80%;	
+}
+#gigsColumn2 ul li{
+	padding-top:1px;
+	padding-bottom:1px;
+}
+.gigsPhotos {
+	float:left;
+	padding-top:20px;
+  	line-height: 0;
+   
+  	-webkit-column-count: 5;
+  	-webkit-column-gap:   0px;
+  	-moz-column-count:    5;
+  	-moz-column-gap:      0px;
+  	column-count:         5;
+  	column-gap:           0px;  
+}
+
+.gigsPhotos img {
+  	width: 100% !important;
+  	height: auto !important;
+}
+@media (max-width: 1200px) {
+  	.gigsPhotos {
+  		-moz-column-count:    4;
+  		-webkit-column-count: 4;
+  		column-count:         4;
+  	}
+}
+@media (max-width: 1000px) {
+  	.gigsPhotos {
+  		-moz-column-count:    3;
+  		-webkit-column-count: 3;
+  		column-count:         3;
+  	}
+}
+@media (max-width: 800px) {
+  	.gigsPhotos {
+  		-moz-column-count:    2;
+  		-webkit-column-count: 2;
+ 		 column-count:         2;
+  	}
+}
+@media (max-width: 400px) {
+  	.gigsPhotos {
+  		-moz-column-count:    1;
+  		-webkit-column-count: 1;
+  		column-count:         1;
+  	}
+}
+
+/* Music Page CSS */
+.albums h1{
+	padding-top:50px;
+}
+.albumContainer{
+	position:relative;
+	max-width:300px;
+	max-height:300px;
+	margin-left:20px;
+	margin-right:20px;
+	margin-top:10px;
+	margin-bottom:10px;
+	display:inline-block;	
+}
+.albumCover{
+	max-width:300px;
+	max-height:300px;
+	display:inline-block;	
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color:#666;
+}
+.albumContainer:hover .overlay {
+  opacity: 0.75;
+}
