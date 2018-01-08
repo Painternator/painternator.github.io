@@ -1,33 +1,57 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Jack Painter Web Authoring Assessment</title>
 <link rel="stylesheet" href="css/styles.css" />
+<link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="js/main.js"></script>
 </head>
 <body>
-    <section id="heading">
+    <section class="heading">
         <header>
-        	<img src="assets/Arctic_Monkeys_Logo.png" />
+        	<img id="mainLogo" src="assets/Arctic_Monkeys_Logo.png" />
             <br />
             <nav id="menuBar">
                 <ul>
-                    <li><a href="#Home">Home</a></li>
-                    <li><a href="#News">News</a></li>
-                    <li><a href="#Gigs">Gigs</a></li>
-                    <li><a href="#Photos">Photos</a></li>
-                    <li><a href="#Videos">Videos</a></li>
-                    <li><a href="#Releases">Releases</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="gigs.html">Gigs</a></li>
+                    <li><a href="#mainLogo">Media</a></li>
+                    <li><a href="music.html">Music</a></li>
                     <li><a href="http://arcticmonkeys.dominomart.com/">Store</a></li>
+                    <li><a href="customiser.html">Design an Album Cover</a></li>
                 </ul>
             </nav>
         </header>
     </section>
-    <section id="YouTubeVideos">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/H8tLS_NOWLs" frameborder="0" allowfullscreen></iframe>
+    
+   
+    <section class="videos">
+    	<h1>Videos</h1>
+        <br/>
+        <ul>
+        	<li><iframe width="560" height="315" src="https://www.youtube.com/embed/H8tLS_NOWLs" frameborder="0" allowfullscreen></iframe></li>
+        	<li><iframe width="560" height="315" src="https://www.youtube.com/embed/1_O_T6Aq85E" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></li>
+            <li><iframe width="560" height="315" src="https://www.youtube.com/embed/Jn6-TItCazo" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></li>
+            <li><iframe width="560" height="315" src="https://www.youtube.com/embed/qN7gSMPQFss" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></li>
+            <li><iframe width="560" height="315" src="https://www.youtube.com/embed/3PyoxMSEHYI" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></li>
+            <li><iframe width="560" height="315" src="https://www.youtube.com/embed/9zXkAaoBOLU" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></li>
+            <li><iframe width="560" height="315" src="https://www.youtube.com/embed/VQH8ZTgna3Q" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></li>
+            <li><iframe width="560" height="315" src="https://www.youtube.com/embed/bpOSxM0rNPM" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></li>
+            <li><iframe width="560" height="315" src="https://www.youtube.com/embed/1wznj4lD1Bs" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></li>
+        </ul>
     </section>
-    <footer id="footer">
-    	<img src="assets/spotify.png" />
+    
+    <footer>
+    <br/>
+    	<div class="socialBtn">
+    		<a href="https://www.facebook.com/ArcticMonkeys/"><img src="icons/facebook.png"/></a>
+        	<a href="https://twitter.com/arcticmonkeys"><img src="icons/twitter.png"/></a>
+    		<a href="https://www.instagram.com/arcticmonkeys/"><img src="icons/instagram.png"/></a>
+        	<a href="https://open.spotify.com/artist/7Ln80lUS6He07XvHI8qqHH"><img src="icons/Spotify.png"/></a>
+        </div>
     </footer>
 </body>
 </html>

@@ -18,9 +18,35 @@ function init(){
 	canvas = document.getElementById("AlbumDrawing");
 	myContext = canvas.getContext("2d");
 	var x, y;
-	var checkboxChecked = false;
+	var mouseDown = 0;
 	
-	canvas.width = window.innerWidth;
+	document.body.onmousedown = function(){
+		++mouseDown;	
+	}
+	document.body.onmouseup = function(){
+		--mouseDown;	
+	}
+	
+	if(mouseDown){
+		var lastX, lastY;
+	
+		myContext.beginPath();
+		lastX = x; lastY = y;
+		var color = $('#line_colour').val();
+		var size = $('#line_size').val();
+		console.log(color);
+		console.log(size);
+		myContext.strokeStyle = "#FFF";
+		//myContext.lineWidth = size;
+		//myContext.lineJoin = "round";
+		myContext.moveTo(lastX, lastY);
+		myContext.lineTo(x,y);
+		myContext.stroke();
+		myContext.closePath();
+		//lastX = x; lastY = y;		
+	}
+	
+	/*canvas.width = window.innerWidth;
 	canvas.height = window.innerHeight;
 	
 	canvas.addEventListener("click", function(e){
@@ -45,7 +71,7 @@ function init(){
 		mousePressed = false;
 	});
 	
-	draw(x, y);
+	draw(x, y);*/
 }
 
 function draw(x, y){
@@ -53,18 +79,19 @@ function draw(x, y){
 	
 	if(mousePressed == true){
 		myContext.beginPath();
+		lastX = x; lastY = y;
 		var color = $('#line_colour').val();
 		var size = $('#line_size').val();
 		console.log(color);
 		console.log(size);
-		myContext.strokeStyle = color;
-		myContext.lineWidth = size;
-		myContext.lineJoin = "round";
+		myContext.strokeStyle = "#FFF";
+		//myContext.lineWidth = size;
+		//myContext.lineJoin = "round";
 		myContext.moveTo(lastX, lastY);
 		myContext.lineTo(x,y);
-		myContext.closePath();
 		myContext.stroke();
-		lastX = x; lastY = y;
+		myContext.closePath();
+		//lastX = x; lastY = y;
 	}
 }
 
