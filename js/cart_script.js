@@ -63,3 +63,7 @@ function delElement(a){
 	price(a,1);
 	displayCart();	
 }
+
+window.onload = function(){
+	displayCart();
+}
