@@ -3,6 +3,10 @@ names = [];
 qtyAlbums = [0,0,0,0,0];
 price = [];
 
+window.onload = function(){
+	displayCart();
+}
+
 function buyAlbum1(){
 	names.push($("#Album1Name").value);
 	qtyAlbums[0] = qtyAlbums + 1;
@@ -46,13 +50,12 @@ function buyAlbum5(){
 }
 
 function displayCart(){
-	cartdata = "<table><tr><th>Product Name</th><th>Quantity</th><th>Price</th><th>Total</th></tr></table>";
-	
+	cartdata = "";
 	total = 0;
 	
 	for(i=0; i<names.length; i++){
 		total += qtyAlbums[i]*price[i];
-		cartdata += "<tr><td>" + names[i] + "</td><td>" + qtyAlbums[i] + "</td><td>" + price[i] + "</td><td>" + qtyAlbums[i]*price[i] + "</td><td><button onclick='delElement(" + i + ")'>Remove</button></td></tr>";
+		cartdata = "<tr><td>" + names[i] + "</td><td>" + qtyAlbums[i] + "</td><td>" + price[i] + "</td><td>" + qtyAlbums[i]*price[i] + "</td><td><button onclick='delElement(" + i + ")'>Remove</button></td></tr>";
 	}
 	document.getElementById('cart_body').innerHTML = cartdata;
 }
@@ -62,8 +65,4 @@ function delElement(a){
 	qtyAlbums(a,1);
 	price(a,1);
 	displayCart();	
-}
-
-window.onload = function(){
-	displayCart();
 }

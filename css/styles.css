@@ -17,8 +17,12 @@ footer{
 }
 footer .socialBtn img{
 	display:inline-block;
-	max-height:20px;
-	max-width:20px;	
+	max-height:30px;
+	max-width:30px;	
+}
+#reportBtn{
+	color:white;
+	font-size:24px;	
 }
 #mainLogo{
 	display:inline;
@@ -296,4 +300,25 @@ a:active{
 }
 .shopping-cart table thead{
 	font-size:24px;	
+}
+
+/* Report Page CSS */
+.report{
+	margin:100px;	
+}
+.report h1{
+	font-size:48px;	
+}
+.report p{
+	font-size:18px;	
+}
+#image_sources ul{
+	list-style-type:none;	
+}
+#image_sources ul li{
+	margin-top:10px;
+	margin-bottom:10px;
+}
+#image_sources ul li a{
+	color:white;	
 }

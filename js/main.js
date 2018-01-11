@@ -1,118 +1,90 @@
 // JavaScript Document
-$(document).ready(function()
-	{console.log("ready!");
-	
-	news();
-	submission();
-})
-
-var mousePressed = false;
-var canvas, myContext;
+var canvas, context;
 
 window.onload = function(){
 	init();
+	submission();
 	console.log("ready");
 }
 
+var clickX = new Array();
+var clickY = new Array();
+var clickDrag = new Array();
+var paint;
+
 function init(){
+	//calls canvas element
 	canvas = document.getElementById("AlbumDrawing");
-	myContext = canvas.getContext("2d");
-	var x, y;
-	var mouseDown = 0;
+	context = canvas.getContext("2d");
 	
-	document.body.onmousedown = function(){
-		++mouseDown;	
-	}
-	document.body.onmouseup = function(){
-		--mouseDown;	
-	}
-	
-	if(mouseDown){
-		var lastX, lastY;
-	
-		myContext.beginPath();
-		lastX = x; lastY = y;
-		var color = $('#line_colour').val();
-		var size = $('#line_size').val();
-		console.log(color);
-		console.log(size);
-		myContext.strokeStyle = "#FFF";
-		//myContext.lineWidth = size;
-		//myContext.lineJoin = "round";
-		myContext.moveTo(lastX, lastY);
-		myContext.lineTo(x,y);
-		myContext.stroke();
-		myContext.closePath();
-		//lastX = x; lastY = y;		
-	}
-	
-	/*canvas.width = window.innerWidth;
-	canvas.height = window.innerHeight;
-	
-	canvas.addEventListener("click", function(e){
-		x = e.pageX - this.offsetLeft;
-		y = e.pageY - this.offsetTop;
-		console.log("x= ", x, "y= ", y);
+	//Function to test if the mouse button is down
+	$('#AlbumDrawing').mousedown(function(e){
+		//variables find where the mouse is on the canvas
+		var mouseX = e.pageX - this.offsetLeft;
+		var mouseY = e.pageY - this.offsetTop;
+		
+		//sets the drawing boolean to true
+		paint = true;
+		//runs function to add the positions of the mouse to the arrays declared earlier
+		addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop);
+		//runs redraw function
+		redraw();	
 	});
 	
-	canvas.addEventListener("mousedown", function(e){
-		mousePressed = true;
+	//Function to test if the mouse is moving or not
+	$('#AlbumDrawing').mousemove(function(e){
+		//tests if the boolean is true or not
+		if(paint == true){
+			//runs function to add the positions of the mouse to the arrays declared earlier
+			addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true);
+			//runs redraw function
+			redraw();	
+		}
 	});
 	
-	//canvas.addEventListener("mousemove", function(e){
-		//mousePressed = true;
-	//});
-	
-	canvas.addEventListener("mouseup", function(e){
-		mousePressed = false;
+	//Function to test if the mouse button is up
+	$('#AlbumDrawing').mouseup(function(e){
+		paint = false;
 	});
 	
-	canvas.addEventListener("mouseleave", function(e){
-		mousePressed = false;
+	//Function to test if the mouse leaves the canvas
+	$('#AlbumDrawing').mouseleave(function(e){
+		paint = false;
 	});
-	
-	draw(x, y);*/
 }
 
-function draw(x, y){
-	var lastX, lastY;
-	
-	if(mousePressed == true){
-		myContext.beginPath();
-		lastX = x; lastY = y;
-		var color = $('#line_colour').val();
-		var size = $('#line_size').val();
-		console.log(color);
-		console.log(size);
-		myContext.strokeStyle = "#FFF";
-		//myContext.lineWidth = size;
-		//myContext.lineJoin = "round";
-		myContext.moveTo(lastX, lastY);
-		myContext.lineTo(x,y);
-		myContext.stroke();
-		myContext.closePath();
-		//lastX = x; lastY = y;
-	}
+function addClick(x, y, dragging){
+	clickX.push(x);
+	clickY.push(y);
+	clickDrag.push(dragging);
 }
 
-function news(){
-	//$('#NewsStory1').hide();
-	//$('#NewsStory2').hide();
-	
-	$('#NewsList1').click(function(){
-		console.log("click");
-		event.preventDefault();
-		$('#NewsStory1 h1').show(500);
-		$('#NewsStory1 p').show(1000);
-		$('#NewsStory2').hide(500);
-	})
-
-	$('#NewsList2').click(function(){
-		event.preventDefault();
-		$('#NewsStory2 h1').show(500);
-		$('#NewsStory2 p').show(1000);
-		$('#NewsStory1').hide(500);
-	})	
+function redraw(){
+	var colour = $('#line_colour').val();
+	var size = $('#line_size').val();
+  	context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+  
+  	context.strokeStyle = colour;
+	console.log($('#line_colour').val());
+  	context.lineJoin = "round";
+  	context.lineWidth = size;
+	console.log($('#line_size').val());
+			
+  	for(var i=0; i < clickX.length; i++){		
+		context.beginPath();
+		if(clickDrag[i] && i)
+		{
+		  context.moveTo(clickX[i-1], clickY[i-1]);
+		}
+		else
+		{
+		   context.moveTo(clickX[i]-1, clickY[i]);
+		}
+		 
+		 context.lineTo(clickX[i], clickY[i]);
+		 context.closePath();
+		 context.stroke();
+	}
 }
 
 function submission(){
