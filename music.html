@@ -7,11 +7,12 @@
 <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" rel="stylesheet" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/cart_script"></script>
 </head>
 <body>
     <section class="heading">
         <header>
-        	<img id="mainLogo" src="assets/Arctic_Monkeys_Logo.png" />
+        	<img id="mainLogo" src="assets/Arctic_Monkeys_Logo.png" alt="Arctic Monkeys Logo"/>
             <br />
             <nav id="menuBar">
                 <ul>
@@ -20,7 +21,7 @@
                     <li><a href="gigs.html">Gigs</a></li>
                     <li><a href="videos.html">Media</a></li>
                     <li><a href="#mainLogo">Music</a></li>
-                    <li><a href="http://arcticmonkeys.dominomart.com/">Store</a></li>
+                    <li><a href="cart.html">Cart</a></li>
                     <li><a href="customiser.html">Design an Album Cover</a></li>
                 </ul>
             </nav>
@@ -32,61 +33,60 @@
         <div class="albumContainer">
         	<img class="albumCover" src="assets/album_covers/AM_Cover.png" alt="AM Album Cover"/>
         	<div class="overlay">
-        		<h3>AM Album</h3>
-            	<h4>£17.99</h4>
-            	<button class="cartBtn">Add to Cart</button>
+        		<h3 id="Album1Name">AM Album</h3>
+            	<h4 id="Album1Price">£17.99</h4>
+            	<button type="submit" onClick="buyAlbum1()" class="cartBtn">Add to Cart</button>
             </div>    
         </div>
-        <div class="albumContainer">
+        <div class="albumContainer" data-price="17.99">
         	<img class="albumCover" src="assets/album_covers/Favourite_Worst_Nightmare.jpg" alt="Favourite Worst Nightmare Album Cover"/>
             <div class="overlay">
-            	<h3>Favourite Worst Nightmare Album</h3>
-                <h4>£17.99</h4>
-                <button class="cartBtn">Add to Cart</button>
+            	<h3 id="Album2Name">Favourite Worst Nightmare Album</h3>
+                <h4 id="Album2Price">£17.99</h4>
+                <button type="submit" onClick="buyAlbum2()" class="cartBtn">Add to Cart</button>
             </div>
         </div>
-        <div class="albumContainer">
+        <div class="albumContainer" data-price="17.99">
         	<img class="albumCover" src="assets/album_covers/humbug_cover.jpg" alt="Humbug Album Cover"/>
             <div class="overlay">
-            	<h3>Humbug Album</h3>
-                <h4>£17.99</h4>
-                <button class="cartBtn">Add to Cart</button>
+            	<h3 id="Album3Name">Humbug Album</h3>
+                <h4 id="Album3Price">£17.99</h4>
+                <button type="submit" onClick="buyAlbum3()" class="cartBtn">Add to Cart</button>
             </div>
         </div>
-        <div class="albumContainer">
+        <div class="albumContainer" data-price="17.99">
         	<img class="albumCover" src="assets/album_covers/suck_it_and_see.jpg" alt="Suck It and See Album Cover"/>
             <div class="overlay">
-            	<h3>Suck It and See Album</h3>
-                <h4>£17.99</h4>
-                <button class="cartBtn">Add to Cart</button>
+            	<h3 id="Album4Name">Suck It and See Album</h3>
+                <h4 id="Album4Price">£17.99</h4>
+                <button type="submit" onClick="buyAlbum4()" class="cartBtn">Add to Cart</button>
             </div>
         </div>
-        <div class="albumContainer">
+        <div class="albumContainer" data-price="17.99">
         	<img class="albumCover" src="assets/album_covers/Whatever_People_Say_I_Am,_That's_What_I'm_Not.jpg" alt="Whatever People Say I Am, That's What I'm Not Album Cover"/>
             <div class="overlay">
-            	<h3>Whatever People Say I Am, That's What I'm Not</h3>
-                <h4>£17.99</h4>
-                <button class="cartBtn">Add to Cart</button>
+            	<h3 id="Album5Name">Whatever People Say I Am, That's What I'm Not</h3>
+                <h4 id="Album5Price">£17.99</h4>
+                <button type="submit" onClick="buyAlbum5()" class="cartBtn">Add to Cart</button>
             </div>
         </div>
     </section>
     
-    <section class="singles">
-    	<h1>Singles<h1>
-        <img class="albumCover" src="" alt="">
-        <img class="albumCover" src="" alt="">
-        <img class="albumCover" src="" alt="">
-        <img class="albumCover" src="" alt="">
-        <img class="albumCover" src="" alt="">
+    <section class="streams">
+    	<h1>Streaming Platforms</h1>
+    	<h2>These are the streaming platforms that you can find our music on.</h2>
+    	<a id="SpotifyBtn" href="https://open.spotify.com/artist/7Ln80lUS6He07XvHI8qqHH"><img src="icons/Spotify.png"></a>
+		<a id="AppleBtn" href="https://itunes.apple.com/ca/artist/arctic-monkeys/62820413"><img src="icons/itunes.png"/></a>
+   		<a id="GoogleBtn" href="https://play.google.com/store/music/artist/Arctic_Monkeys?id=Avnnuehmn7ml3upe5m4giajj7gu&hl=en_GB"><img src="icons/GoogleMusic.png"/></a>
     </section>
     
     <footer>
     <br/>
     	<div class="socialBtn">
-    		<a href="https://www.facebook.com/ArcticMonkeys/"><img src="icons/facebook.png"/></a>
-        	<a href="https://twitter.com/arcticmonkeys"><img src="icons/twitter.png"/></a>
-    		<a href="https://www.instagram.com/arcticmonkeys/"><img src="icons/instagram.png"/></a>
-        	<a href="https://open.spotify.com/artist/7Ln80lUS6He07XvHI8qqHH"><img src="icons/Spotify.png"/></a>
+    		<a href="https://www.facebook.com/ArcticMonkeys/"><img src="icons/facebook.png" alt="Facebook Icon"/></a>
+        	<a href="https://twitter.com/arcticmonkeys"><img src="icons/twitter.png" alt="Twitter Icon"/></a>
+    		<a href="https://www.instagram.com/arcticmonkeys/"><img src="icons/instagram.png" alt="Instagram Icon"/></a>
+        	<a href="https://open.spotify.com/artist/7Ln80lUS6He07XvHI8qqHH"><img src="icons/Spotify.png" alt="Spotify Icon"/></a>
         </div>
     </footer>
 </body>

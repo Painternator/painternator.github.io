@@ -243,6 +243,32 @@ a:active{
 .albumContainer:hover .overlay {
   	opacity: 0.75;
 }
+.streams h1{
+	font-size:72px;
+	margin-top:50px;	
+}
+.streams a{
+	position:relative;
+	text-align:center;
+	color:white;
+	height:180px;
+	width:auto;
+	background-color:black;
+	display:inline-block;
+	border:thin;
+	border-color:#000;
+	border-radius:20px;
+	margin-left:20px;
+	margin-right:20px;
+	margin-top:10px;
+	margin-bottom:10px;
+	font-size:18px;
+}
+.streams a img{
+	margin-top:20px;
+	height:150px;
+	width:150px;
+}
 
 /* Videos Page CSS */
 .videos h1{
@@ -261,4 +287,13 @@ a:active{
 	padding-bottom:10px;
 	padding-left:20px;
 	padding-right:20px;
+}
+
+/* Cart Page CSS */
+.shopping-cart table{
+	margin-top:50px;
+	width:90%;	
+}
+.shopping-cart table thead{
+	font-size:24px;	
 }

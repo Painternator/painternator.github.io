@@ -2,11 +2,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Jack Painter Web Authoring Assessment</title>
+<title>Arctic Monkeys - Cart</title>
 <link rel="stylesheet" href="css/styles.css" />
 <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" rel="stylesheet" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/cart_script.js"></script>
 </head>
 <body>
     <section class="heading">
@@ -18,7 +19,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="news.html">News</a></li>
                     <li><a href="gigs.html">Gigs</a></li>
-                    <li><a href="#mainLogo">Media</a></li>
+                    <li><a href="videos.html">Media</a></li>
                     <li><a href="music.html">Music</a></li>
                     <li><a href="cart.html">Cart</a></li>
                     <li><a href="customiser.html">Design an Album Cover</a></li>
@@ -27,21 +28,24 @@
         </header>
     </section>
     
-   
-    <section class="videos">
-    	<h1>Videos</h1>
-        <br/>
-        <ul>
-        	<li><iframe width="560" height="315" src="https://www.youtube.com/embed/H8tLS_NOWLs" allowfullscreen></iframe></li>
-        	<li><iframe width="560" height="315" src="https://www.youtube.com/embed/1_O_T6Aq85E" allowfullscreen></iframe></li>
-            <li><iframe width="560" height="315" src="https://www.youtube.com/embed/Jn6-TItCazo" allowfullscreen></iframe></li>
-            <li><iframe width="560" height="315" src="https://www.youtube.com/embed/qN7gSMPQFss" allowfullscreen></iframe></li>
-            <li><iframe width="560" height="315" src="https://www.youtube.com/embed/3PyoxMSEHYI" allowfullscreen></iframe></li>
-            <li><iframe width="560" height="315" src="https://www.youtube.com/embed/9zXkAaoBOLU" allowfullscreen></iframe></li>
-            <li><iframe width="560" height="315" src="https://www.youtube.com/embed/VQH8ZTgna3Q" allowfullscreen></iframe></li>
-            <li><iframe width="560" height="315" src="https://www.youtube.com/embed/bpOSxM0rNPM" allowfullscreen></iframe></li>
-            <li><iframe width="560" height="315" src="https://www.youtube.com/embed/1wznj4lD1Bs" allowfullscreen></iframe></li>
-        </ul>
+    <section class="shopping-cart">
+    	<table>
+        	<thead>
+            	<tr>
+                	<th scope="col">Item</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                </tr>
+            </thead>
+            <tbody id="cart_body">
+            	
+            </tbody>
+            <tfoot>
+            	<button type="button" id="cart_clear" onClick="cartEmpty()" value="Empty Cart">Empty Cart</button>
+            </tfoot>
+        </table>
+    
+    	<a href="checkout.html" id="checkoutBtn">Checkout</a></li>
     </section>
     
     <footer>
